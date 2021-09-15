@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bit747控制面板</string>
+    <string name="app_name2">Bit747 Xposed插件控制面板</string>
+    <string name="description">Bit747 Xposed插件控制面板，主要用于控制com.bit747.*的xposed插件的配置文件</string>
+    <string name="notice1">剪贴板过滤</string>
+    <string name="notice3">被hook的app有读取本地文件的权限，存储重定向用户需要特别注意！
+    如果实在不想给存储权限， 或者重定向用户觉得设置太麻烦，可以反编译模块自己改代码。
+    </string>
+    <string name="thanks">部分源码来源于 https://github.com/congshengwu/Xposed_Clipboard</string>
+    <string name="reR">规则：</string>
+    <string name="saveRules">保存规则</string>
+    <string name="title_activity_clipboard_filter">剪贴板过滤</string>
+
+</resources>
