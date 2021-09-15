@@ -12,8 +12,6 @@ import android.widget.Toast;
 import com.bit747.xposedpanel.R;
 import com.bit747.xposedpanel.Utils.FileIO;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MiuiNotificationBackground extends AppCompatActivity {
@@ -29,8 +27,8 @@ public class MiuiNotificationBackground extends AppCompatActivity {
         setBlurRadius = findViewById(R.id.mnb_setBlurRadius);
         addBlendLayer1 = findViewById(R.id.mnb_addBlendLayer1);
         addBlendLayer2 = findViewById(R.id.mnb_addBlendLayer2);
-        saveRules.findViewById(R.id.mnb_goTest);
-        restartSystemUI.findViewById(R.id.mnb_restartUI);
+        saveRules=findViewById(R.id.mnb_goTest);
+        restartSystemUI=findViewById(R.id.mnb_restartUI);
         init();
     }
     public void init(){

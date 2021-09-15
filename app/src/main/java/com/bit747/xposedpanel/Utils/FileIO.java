@@ -67,6 +67,7 @@ public class FileIO {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
             InputStream instream = null;
             try {
+
                 instream = new FileInputStream(path+fileName);
                 if (instream != null) {
                     InputStreamReader inputreader = new InputStreamReader(instream);
