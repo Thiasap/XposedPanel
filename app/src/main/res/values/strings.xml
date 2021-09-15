@@ -2,7 +2,6 @@
     <string name="app_name">Bit747控制面板</string>
     <string name="app_name2">Bit747 Xposed插件控制面板</string>
     <string name="description">Bit747 Xposed插件控制面板，主要用于控制com.bit747.*的xposed插件的配置文件</string>
-    <string name="notice1">剪贴板过滤</string>
     <string name="notice3">被hook的app有读取本地文件的权限，存储重定向用户需要特别注意！
     如果实在不想给存储权限， 或者重定向用户觉得设置太麻烦，可以反编译模块自己改代码。
     </string>
@@ -10,5 +9,16 @@
     <string name="reR">规则：</string>
     <string name="saveRules">保存规则</string>
     <string name="title_activity_clipboard_filter">剪贴板过滤</string>
+    <string name="title_activity_miui_notification_background">MIUI通知栏模糊</string>
+    <string name="des_mnb">修改MIUI通知栏模糊程度，一般只需要修改setBlurRadius，值越小透明度越小，其他尽量别动，出问题请关闭xposed插件,
+        或者删除配置文件/sdcard/Android/hooker/MiuiNotificationBackground.conf
+    真要觉得效果不明显，请把第一项改成2</string>
+    <string name="setBlurRadius_mnb">setBlurRadius</string>
+    <string name="addBlendLayer1_mnb">addBlendLayer1</string>
+    <string name="addBlendLayer2_mnb">addBlendLayer2</string>
+    <string name="restartSystemui">重启SystemUI</string>
+    <string name="mnb_BR">8</string>
+    <string name="mnb_BL1">-2074585000</string>
+    <string name="mnb_BL2">-1544359182</string>
 
 </resources>

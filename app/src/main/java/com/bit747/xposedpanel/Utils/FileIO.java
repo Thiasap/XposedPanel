@@ -2,14 +2,21 @@ package com.bit747.xposedpanel.Utils;
 
 import android.os.Environment;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileIO {
-    public static void saveData(String path, String fileName, String rules) {
+    public static int saveData(String path, String fileName, String rules) {
         byte[] buffer = rules.getBytes(StandardCharsets.UTF_8);
         FileOutputStream fos = null;
         try {
@@ -20,6 +27,7 @@ public class FileIO {
                 fos = new FileOutputStream(file);
                 fos.write(buffer);
                 fos.close();
+                return 1;
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -31,6 +39,7 @@ public class FileIO {
                 e.printStackTrace();
             }
         }
+        return 0;
     }
     public static String readData(String path, String fileName){
         try {
@@ -50,6 +59,31 @@ public class FileIO {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+    public static List<String> readLine(String path, String fileName){
+        List<String> rules = new ArrayList<>();
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+            InputStream instream = null;
+            try {
+                instream = new FileInputStream(path+fileName);
+                if (instream != null) {
+                    InputStreamReader inputreader = new InputStreamReader(instream);
+                    BufferedReader buffreader = new BufferedReader(inputreader);
+                    String line;
+                    //分行读取
+                    while (( line = buffreader.readLine()) != null) {
+                        rules.add(line);
+                    }
+                    instream.close();
+                    return rules;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            return null;
         }
         return null;
     }

@@ -15,7 +15,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:text="@string/notice1" />
+            android:text="@string/title_activity_clipboard_filter" />
 
         <TextView
             android:layout_width="match_parent"

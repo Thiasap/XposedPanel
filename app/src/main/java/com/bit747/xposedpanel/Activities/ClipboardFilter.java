@@ -6,6 +6,7 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.bit747.xposedpanel.R;
 import com.bit747.xposedpanel.Utils.FileIO;
@@ -25,7 +26,11 @@ private String path;
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FileIO.saveData(path,"clipboardfilter.conf",rulesET.getText().toString());
+                if(FileIO.saveData(path,"clipboardfilter.conf",rulesET.getText().toString())==1){
+                    Toast.makeText(ClipboardFilter.this,"保存成功！",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(ClipboardFilter.this,"保存失败！",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
